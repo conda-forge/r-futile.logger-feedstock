@@ -1,5 +1,4 @@
 {% set version = '1.4.3' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,24 +9,25 @@ package:
 source:
   fn: futile.logger_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/futile.logger_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/futile.logger/futile.logger_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/futile.logger_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/futile.logger/futile.logger_{{ version }}.tar.gz
   sha256: 5e8b32d65f77a86d17d90fd8690fc085aa0612df8018e4d6d6c1a60fa65776e4
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-futile.options
     - r-lambda.r >=1.1.0
-
   run:
     - r-base
     - r-futile.options
@@ -35,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('futile.logger')"  # [not win]
+    - $R -e "library('futile.logger')"           # [not win]
     - "\"%R%\" -e \"library('futile.logger')\""  # [win]
 
 about:
@@ -51,3 +51,6 @@ extra:
     - johanneskoester
     - bgruening
     - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
