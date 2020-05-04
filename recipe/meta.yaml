@@ -1,4 +1,4 @@
-{% set version = '1.4.3' %}
+{% set version = "1.4.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -15,15 +15,15 @@ source:
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 1003
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-futile.options
@@ -40,12 +40,12 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=futile.logger
-  license: LGPL-3
-  summary: Provides a simple yet powerful logging utility. Based loosely on log4j, futile.logger
-    takes advantage of R idioms to make logging a convenient and easy to use replacement
-    for cat and print statements.
+  license: LGPL-3.0-only
+  summary: Provides a simple yet powerful logging utility. Based loosely on log4j, futile.logger takes advantage of R idioms to make logging a convenient and easy to use replacement for cat and print statements.
   license_family: LGPL
 
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-3
 extra:
   recipe-maintainers:
     - conda-forge/r
