@@ -1,11 +1,11 @@
-About r-futile.logger
-=====================
+About r-futile.logger-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-futile.logger-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=futile.logger
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-futile.logger-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides a simple yet powerful logging utility. Based loosely on log4j, futile.logger takes advantage of R idioms to make logging a convenient and easy to use replacement for cat and print statements.
 
