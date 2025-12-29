@@ -1,4 +1,4 @@
-{% set version = "1.4.3" %}
+{% set version = "1.4.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/futile.logger_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/futile.logger/futile.logger_{{ version }}.tar.gz
-  sha256: 5e8b32d65f77a86d17d90fd8690fc085aa0612df8018e4d6d6c1a60fa65776e4
+  sha256: 496bedbe2e52d06db22a4d659b8e7dd9ad0f1d1f95ead459ec02d05d0ac2b3d6
 
 build:
-  number: 1007
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
